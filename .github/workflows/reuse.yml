@@ -4,7 +4,7 @@ run-name: Reusable Setup
 on:
   workflow_call:
 jobs:
-  Setup:
+  Setup-enviroment:
     runs-on:  ubuntu-latest
     steps:
       - uses: Actions/checkout@v3 #downloads a copy of repo on the runner 
