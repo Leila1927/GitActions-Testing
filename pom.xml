@@ -15,8 +15,10 @@
 	<description>TER project with Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>
-		<sonar.organization>agl22</sonar.organization>
-		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
+		<properties>
+       <sonar.organization>leila1927-1</sonar.organization>
+       <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+</properties>
  		 <sonar.sources>src/main/java,src/main/resources</sonar.sources>
 		<selenium.version>4.5.0</selenium.version>
 		<byte-buddy.version>1.12.17</byte-buddy.version>
