@@ -1,6 +1,6 @@
 
 name: Building
-run-name: Building without testing
+run-name: Building 
 on:
   push:
     branches:

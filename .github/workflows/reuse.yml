@@ -1,14 +1,10 @@
 
-name: Reuse Build
-run-name: Reusable build
+name: Reuse setup
+run-name: Reusable Setup
 on:
   workflow_call:
 jobs:
-  Premier-Job:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "Hello World!!"
-  Build:
+  Setup:
     runs-on:  ubuntu-latest
     steps:
       - uses: Actions/checkout@v3 #downloads a copy of repo on the runner 
