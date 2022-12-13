@@ -105,16 +105,6 @@
 				</executions>
 			</plugin>
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<version>3.0.0-M7</version>
-				<configuration>
-					<excludes>
-						<exclude>seleniumTests/*.java</exclude>
-					</excludes>
-				</configuration>
-			</plugin>
-			<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
 				<version>0.8.8</version>
@@ -133,19 +123,6 @@
 						</goals>
 					</execution>
 				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-failsafe-plugin</artifactId>
-				<version>3.0.0-M7</version>
-				<configuration>
-					<environmentVariables>
-						<TMPDIR>/home/nebut/tmp/</TMPDIR>
-					</environmentVariables>
-					<includes>
-						<include>seleniumTests/*Test.java</include>
-					</includes>
-				</configuration>
 			</plugin>
 		</plugins>
 	</build>
