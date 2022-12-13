@@ -1,0 +1,31 @@
+
+name: Building and testing without recompiling
+run-name: Building 
+on:
+  push:
+    branches:
+      - main
+jobs:
+  Set-up:
+    uses: Leila1927/GitActions-Testing/.github/workflows/reuse.yml@main
+  Build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: Actions/checkout@v3
+      - name: Build with Maven
+      - uses: actions/upload-artifact@master
+        with:
+           name: compiled-files
+           path: target/
+
+      run: mvn clean package -Dmaven.test.skip=true     
+  test:
+    needs: Build  
+
+    runs-on: 
+    steps:
+        - uses: actions/download-artifact@master
+          with:
+           name: compiled-files
+           path: target/
+        run: mvn test
