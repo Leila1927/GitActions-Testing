@@ -10,6 +10,7 @@ jobs:
   Test:
     runs-on: ubuntu-latest
     steps:
+      - uses: Actions/checkout@v3
       - name: Testing with maven
         run: mvn test
       - name: Archive jacoco coverage results
