@@ -11,7 +11,7 @@ jobs:
       - uses: Actions/checkout@v3
       - name: Tes
         run: echo 'hey'
-      - uses: Leila1927/GitActions-Testing/.gitflow/workflows/reuse.yml@main
+      - uses: Leila1927/GitActions-Testing/.github/workflows/reuse.yml@main
       - name: Testing with maven
         run: mvn test
       - name: Archive jacoco coverage results
