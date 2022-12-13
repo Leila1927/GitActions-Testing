@@ -1,0 +1,18 @@
+name: Ter-test
+run-name: Testing
+on:
+  push:
+    branches:
+      - main
+jobs:
+  Test:
+    runs-on:  ubuntu-latest
+    steps:
+        - uses: Actions/checkout@v3 #downloads a copy of repo on the runner 
+        - name: Set up JDK 11 
+          uses: Actions/setup-java@v3
+          with: 
+            java-version: '11'
+            distribution: 'adopt'
+        - name: Build with Maven
+          run: mvn test
