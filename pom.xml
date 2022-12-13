@@ -18,7 +18,7 @@
 		<properties>
        <sonar.organization>leila1927-1</sonar.organization>
        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
-</properties>
+    </properties>
  		 <sonar.sources>src/main/java,src/main/resources</sonar.sources>
 		<selenium.version>4.5.0</selenium.version>
 		<byte-buddy.version>1.12.17</byte-buddy.version>
