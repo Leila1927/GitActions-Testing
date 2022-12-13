@@ -18,6 +18,6 @@ jobs:
           run: mvn test
         - name: Archive jacoco coverage results
           uses: actions/upload-artifact@v3
-            with:
-              name: jacoco-coverage-report
-              path: target/
+          with:
+            name: jacoco-coverage-report
+            path: target/
