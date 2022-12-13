@@ -5,9 +5,10 @@ on:
     branches:
       - main
 jobs:
-  Test:
-    runs-on:  ubuntu-latest
+  Set-up:
     uses: Leila1927/GitActions-Testing/.github/workflows/reuse.yml@main
+  Test:
+    runs-on: ubuntu-latest
     steps:
       - name: Testing with maven
         run: mvn test
