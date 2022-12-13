@@ -19,5 +19,5 @@ jobs:
         - name: Archive jacoco coverage results
           uses: actions/upload-artifact@v3
             with:
-            name: jacoco-coverage-report
-            path: target/
+              name: jacoco-coverage-report
+              path: target/
