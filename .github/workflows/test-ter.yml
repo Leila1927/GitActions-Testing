@@ -8,9 +8,9 @@ jobs:
   Test:
     runs-on:  ubuntu-latest
     steps:
-        - uses: Leila1927 /GitActions-Testing/.gitflow/workflow/reuse.yml #downloads a copy of repo on the runner 
-           run: mvn test
-        - name: Archive jacoco coverage results
+      - uses: Leila1927 /GitActions-Testing/.gitflow/workflow/reuse.yml #downloads a copy of repo on the runner 
+        run: mvn test
+      - name: Archive jacoco coverage results
           uses: actions/upload-artifact@v3
           with:
             name: jacoco-coverage-report
