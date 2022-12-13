@@ -9,6 +9,7 @@ jobs:
   Set-up:
     uses: Leila1927/GitActions-Testing/.github/workflows/reuse.yml@main
   Build:
+    runs-on: ubuntu-latest
     steps:
       - uses: Actions/checkout@v3
       - name: Build with Maven
