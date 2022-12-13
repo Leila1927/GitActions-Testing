@@ -11,4 +11,4 @@ jobs:
     steps:
       - uses: Leila1927 /GitActions-Testing/.gitflow/workflow/reuse.yml 
       - name: Build with Maven
-          run: mvn package -Dmaven.test.skip=true
+        run: mvn package -Dmaven.test.skip=true
