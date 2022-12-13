@@ -1,5 +1,5 @@
 
-name: Building
+name: Building!
 run-name: Building 
 on:
   pull_request:
