@@ -1,0 +1,12 @@
+
+name: Ter-test
+run-name: Using Github Actions with TER
+on:
+  push:
+    branches:
+      - main
+jobs:
+  Premier-Job:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello World!"
