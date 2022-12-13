@@ -9,6 +9,7 @@ jobs:
     runs-on:  ubuntu-latest
     steps:
       - uses: Actions/checkout@v2
+      - name: Tes
         run: echo 'hey'
       - uses: Leila1927/GitActions-Testing/.gitflow/workflows/reuse.yml@main
       - name: Testing with maven
