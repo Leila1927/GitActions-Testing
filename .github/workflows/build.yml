@@ -9,6 +9,6 @@ jobs:
   Premier-Job:
     runs-on:  ubuntu-latest
     steps:
-      - uses: Leila1927 /GitActions-Testing/.gitflow/workflow/reuse.yml 
+      - uses: Leila1927/GitActions-Testing/.gitflow/workflows/reuse.yml 
       - name: Build with Maven
         run: mvn package -Dmaven.test.skip=true

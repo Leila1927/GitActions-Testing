@@ -8,7 +8,7 @@ jobs:
   Test:
     runs-on:  ubuntu-latest
     steps:
-      - uses: Leila1927 /GitActions-Testing/.gitflow/workflow/reuse.yml #downloads a copy of repo on the runner 
+      - uses: Leila1927/GitActions-Testing/.gitflow/workflows/reuse.yml #downloads a copy of repo on the runner 
       - name: Testing with maven
         run: mvn test
       - name: Archive jacoco coverage results
