@@ -2,9 +2,10 @@
 name: Quality check with sonar
 run-name: Quality Check
 on:
-  push:
-    branches:
-      - main
+  workflow_run:
+    workflows: ['test-ter']
+    types:
+      - completed
 jobs:
   Set-up:
     uses: Leila1927/GitActions-Testing/.github/workflows/reuse.yml@main
@@ -12,20 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: Actions/checkout@v3
-      - name: Cache SonarCloud packages
-        uses: actions/cache@v1
-        with:
-          path: ~/.sonar/cache
-          key: ${{ runner.os }}-sonar
-          restore-keys: ${{ runner.os }}-sonar
-      - name: Cache Maven packages
-        uses: actions/cache@v1
-        with:
-          path: ~/.m2
-          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
-          restore-keys: ${{ runner.os }}-m2
-      - name: Build and analyze
+      - name: Analyze with SonarCloud
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=Leila1927_GitActions-Testing 
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=Leila1927_GitActions-Testing
