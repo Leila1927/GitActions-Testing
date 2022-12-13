@@ -8,9 +8,6 @@ jobs:
   Test:
     runs-on:  ubuntu-latest
     steps:
-      - uses: Actions/checkout@v3
-      - name: Tes
-        run: echo 'hey'
       - uses: Leila1927/GitActions-Testing/.github/workflows/reuse.yml@main
       - name: Testing with maven
         run: mvn test
