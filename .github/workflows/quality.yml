@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checking out
-      - uses: Actions/checkout@v3
+        uses: Actions/checkout@v3
       - name: Quality check
         uses: actions/download-artifact@v2
         with:
