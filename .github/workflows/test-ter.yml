@@ -1,7 +1,7 @@
 name: Ter-test
 run-name: Testing
 on:
-  pull_request:
+  push:
     branches:
       - main
 jobs:
