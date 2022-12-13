@@ -7,8 +7,8 @@ on:
 jobs:
   Test:
     runs-on:  ubuntu-latest
+    uses: Leila1927/GitActions-Testing/.github/workflows/reuse.yml@main
     steps:
-      - uses: Leila1927/GitActions-Testing/.github/workflows/reuse.yml@main
       - name: Testing with maven
         run: mvn test
       - name: Archive jacoco coverage results

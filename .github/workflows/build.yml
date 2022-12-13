@@ -7,8 +7,8 @@ on:
       - main
 jobs:
   Premier-Job:
+    uses: Leila1927/GitActions-Testing/.github/workflows/reuse.yml@main
     runs-on:  ubuntu-latest
     steps:
-      - uses: Leila1927/GitActions-Testing/.github/workflows/reuse.yml@main
       - name: Build with Maven
         run: mvn package -Dmaven.test.skip=true
