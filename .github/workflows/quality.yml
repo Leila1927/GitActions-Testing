@@ -21,13 +21,15 @@ jobs:
   quality:
     runs-on: ubuntu-latest
     steps:
+      - name: checking out
       - uses: Actions/checkout@v3
       - name: Quality check
         uses: actions/download-artifact@v2
         with:
           name: jacoco-coverage-report
           path: target/
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=123451927 -DskipTests
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=123451927 -DskipTests
+        
