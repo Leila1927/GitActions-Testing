@@ -1,0 +1,28 @@
+name: Quality
+run-name: Quality
+on:
+  push:
+    branches:
+      - main
+jobs:
+  Set-up:
+    uses: Leila1927/GitActions-Testing/.github/workflows/reuse.yml@main
+  Test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: Actions/checkout@v3
+      - name: Testing with maven
+        run: mvn test
+      - name: Archive jacoco coverage results
+        uses: actions/upload-artifact@v3
+        with:
+          name: jacoco-coverage-report
+          path: target/
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: Actions/checkout@v3
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=123451927

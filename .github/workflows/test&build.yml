@@ -2,7 +2,7 @@
 name: Building and testing without recompiling
 run-name: Building 
 on:
-  push:
+  pull_request:
     branches:
       - main
 jobs:
