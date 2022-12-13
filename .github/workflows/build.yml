@@ -2,7 +2,7 @@
 name: Building
 run-name: Building 
 on:
-  pull:
+  pull_request:
     branches:
       - main
 jobs:
